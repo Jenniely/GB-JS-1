@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <h2 class="page__title">JS-1 Homework</h2>
+    <section class="lesson lesson_1">
+        <h2 class="lesson__title">Lesson 1</h2>
+        <p class="lesson__text">
+            1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по
+            Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по Фаренгейту,
+            Tc – температура по Цельсию</p>
+        <div class="lesson__solution">
+            <code class="lesson__code">
+                function tempTranslate() { <br>
+
+                let celcius = prompt('Enter temperature in Celcius');<br>
+
+                alert(` ${celcius} deg Celcius equals ${(9 / 5) * celcius + 32} deg Farenheit`);<br>
+                };
+            </code>
+
+            <button class="lesson__btn" type="button" onclick="tempTranslate()">Run me</button>
+        </div>
+        <p class="lesson__text">2. Работа с переменными. Объявить две переменные: admin и name. Записать в name строку
+            "Василий";
+            Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).</p>
+        <div class="lesson__solution">
+            <code class="lesson__code">
+                function variablePlay() {<br>
+                    let p = document.getElementById('result');<br>
+                    let admin = name = 'Василий';<br>
+                
+                    p.innerHTML = admin;<br>
+                };
+            </code>
+
+            <button class="lesson__btn" type="button" onclick="variablePlay()">Run me</button>
+            <p class="lesson__result-box" id="result">&nbsp;</p>
+        </div>
+        <p class="lesson-1__text">3. *Чему будет равно JS-выражение 1000 + "108"</p>
+        <div class="lesson-1__solution">
+            <p class="lesson__result-box">1000108: причина в преобразовании типов.</p>
+        </div>
+
+    </section>
+    <script src="./tempTranslate.js"></script>
+    <script src="./variablePlay.js"></script>
+</body>
+
+</html>
