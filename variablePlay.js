@@ -4,7 +4,9 @@
 
 function variablePlay() {
     let p = document.getElementById('result');
-    let admin = name = 'Василий';
+    let admin = '';
+    let name = 'Василий';
+    admin = name;
 
     p.innerHTML = admin;
 };

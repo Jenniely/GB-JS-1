@@ -51,7 +51,7 @@ body {
     border: none;
     outline: none;
     border-radius: 4px;
-    transition: background 1s, color 1s;
+    transition: background 0.5s, color 0.5s;
 }
 
 .lesson__btn:hover {
