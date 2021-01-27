@@ -44,16 +44,33 @@
             </code>
 
             <button class="lesson__btn" type="button" onclick="variablePlay()">Run me</button>
-            <p class="lesson__result-box" id="result">&nbsp;</p>
+            <p class="lesson__result-box" id="result_1">&nbsp;</p>
         </div>
-        <p class="lesson-1__text">3. *Чему будет равно JS-выражение 1000 + "108"</p>
-        <div class="lesson-1__solution">
+        <p class="lesson__text">3. *Чему будет равно JS-выражение 1000 + "108"</p>
+        <div class="lesson__solution">
             <p class="lesson__result-box">1000108: причина в преобразовании типов.</p>
         </div>
+        <p class="lesson__text">4. *Работа с переменными. Обмен значений без третьей переменной.</p>
+        <div class="lesson__solution">
+            <code class="lesson__code">
+                function variableExchange() {<br>
+                    let p = document.getElementById('result_2');<br>
+                    let a = 10, b = 5;<br>
+                    a += b;<br>
+                    b = a - b;<br>
+                    a = a - b;<br>
+                
+                    p.innerHTML = `a = ${a}, b = ${b}`;<br>
+                };
+            </code>
 
+            <button class="lesson__btn" type="button" onclick="variableExchange()">Run me</button>
+            <p class="lesson__result-box" id="result_2">a = 10, b = 5</p>
+        </div>
     </section>
     <script src="./tempTranslate.js"></script>
     <script src="./variablePlay.js"></script>
+    <script src="./variableExchange.js"></script>
 </body>
 
 </html>
