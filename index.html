@@ -10,67 +10,288 @@
 
 <body>
     <h2 class="page__title">JS-1 Homework</h2>
-    <section class="lesson lesson_1">
-        <h2 class="lesson__title">Lesson 1</h2>
+    <section class="lesson lesson_2">
+        <h2 class="lesson__title">Lesson 2.</h2>
+
+        <!-- <details>
+            <summary>See solutions</summary> -->
         <p class="lesson__text">
-            1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по
-            Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по Фаренгейту,
-            Tc – температура по Цельсию</p>
+            1. Дан код. Почему код даёт именно такие результаты?</p>
+        <code class="task__code">
+            var a = 1, b = 1, c, d; <br>
+            c = ++a; alert(c); // 2<br>
+            d = b++; alert(d); // 1<br>
+            c = (2+ ++a); alert(c); // 5<br>
+            d = (2+ b++); alert(d); // 4<br>
+            alert(a); // 3<br>
+            alert(b); // 3<br>
+        </code>
+        <div class="lesson__solution">
+            <div class="lesson__result-box">
+                <p>a увеличивается на 1, возвращается значение.</p>
+                <p>При использовании постфиксного инкремента сначала переменная используется в вызове, а потом
+                    увеличивается.</p>
+                <p>a = 2; при вычислении выражения в скобках увеличивается до 3 и складывается, возвращается результат
+                    всего выражения.</p>
+                <p>b = 2; при вычислении выражения в скобках складывается, возвращается результат всего выражения, потом
+                    b увеличивается на 1.</p>
+                <p>Итоговые значения a и b - 3.</p>
+            </div>
+
+        </div>
+        <p class="lesson__text">2. Чему будет равен x в примере ниже?
+        </p>
+        <code class="task__code">
+            var a = 2;<br>
+            var x = 1 + (a *= 2);
+        </code>
+        <div class="lesson__solution">
+            <div class="lesson__result-box">
+                <p>5. Выполняется выражение в скобках, потом сложение.</p>
+            </div>
+        </div>
+        <p class="lesson__text">3. Объявить две целочисленные переменные a и b и задать им произвольные начальные
+            значения. Затем написать скрипт, который работает по следующему принципу:</p>
+        <ul>
+            <li>если a и b положительные, вывести их разность;</li>
+            <li>если а и b отрицательные, вывести их произведение;</li>
+            <li>если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.</li>
+        </ul>
         <div class="lesson__solution">
             <code class="lesson__code">
-                function tempTranslate() { <br>
+                function numbersPlay() {<br>
+                let result = document.getElementById('result_2-1');<br>
+                let a = ((Math.random() < 0.5) ? -1 : 1)*Math.floor(Math.random() * (1000 - 1)) + 1;<br>
+                    let b = ((Math.random() < 0.5) ? -1 : 1)*Math.floor(Math.random() * (1000 - 1)) + 1;<br>
+                        let res = 0;<br>
+                        let operation = '';<br>
 
-                let celcius = prompt('Enter temperature in Celcius');<br>
-
-                alert(` ${celcius} deg Celcius equals ${(9 / 5) * celcius + 32} deg Farenheit`);<br>
-                };
+                        if (a >= 0 && b >= 0) {<br>
+                        res = a - b;<br>
+                        operation = 'разность';<br>
+                        } else if (a < 0 && b < 0) {<br>
+                            res = a * b;<br>
+                            operation = 'произведение';<br>
+                            } else {<br>
+                            res = a + b;<br>
+                            operation = 'сумма';<br>
+                            }<br>
+                            }<br>
             </code>
 
-            <button class="lesson__btn" type="button" onclick="tempTranslate()">Run me</button>
+            <button class="lesson__btn" type="button" onclick="numbersPlay()">Run me</button>
+            <p class="lesson__result-box" id="result_2-1">&nbsp;</p>
         </div>
-        <p class="lesson__text">2. Работа с переменными. Объявить две переменные: admin и name. Записать в name строку
-            "Василий";
-            Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).</p>
+        <p class="lesson__text">4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch
+            организовать вывод чисел от a до 15.</p>
         <div class="lesson__solution">
             <code class="lesson__code">
-                function variablePlay() {<br>
+                let a = Math.floor(Math.random() * Math.floor(15));<br>
+                let arrOfNum = [];<br>
+                let result = document.getElementById('result_2-2');<br>
+
+                switch(a) {<br>
+                case 0: <br>
+                arrOfNum.push(0);<br>
+
+                case 1: <br>
+                arrOfNum.push(1);<br>
+
+                case 2: <br>
+                arrOfNum.push(2);<br>
+
+                case 3: <br>
+                arrOfNum.push(3);<br>
+
+                case 4: <br>
+                arrOfNum.push(4);<br>
+
+                case 5: <br>
+                arrOfNum.push(5);<br>
+
+                case 6: <br>
+                arrOfNum.push(6);<br>
+
+                case 7: <br>
+                arrOfNum.push(7);<br>
+
+                case 8: <br>
+                arrOfNum.push(8);<br>
+
+                case 9: <br>
+                arrOfNum.push(9);<br>
+
+                case 10: <br>
+                arrOfNum.push(10);<br>
+
+                case 11: <br>
+                arrOfNum.push(11);<br>
+
+                case 12: <br>
+                arrOfNum.push(12);<br>
+
+                case 13: <br>
+                arrOfNum.push(13);<br>
+
+                case 14: <br>
+                arrOfNum.push(14);<br>
+
+                case 15: <br>
+                arrOfNum.push(15);<br>
+                }
+            </code>
+
+            <button class="lesson__btn" type="button" onclick="showNumbersWithSwitch()">Run me</button>
+            <p class="lesson__result-box" id="result_2-2">&nbsp;</p>
+        </div>
+        <p class="lesson__text">5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+            Обязательно использовать оператор return.</p>
+        <div class="lesson__solution">
+            <code class="lesson__code">
+
+                function sumTwo(a,b) {<br>
+                return a + b;<br>
+                }<br>
+
+                function substractTwo(a,b) {<br>
+                return a - b;<br>
+                }<br>
+
+                function multiplyTwo(a,b) {<br>
+                return a * b;<br>
+                }<br>
+
+                function diviseTwo(a,b) {<br>
+                return a / b;<br>
+                }
+            </code>
+        </div>
+
+            <p class="lesson__text">6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2,
+                operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости
+                от переданного значения операции выполнить одну из арифметических операций (использовать функции из
+                пункта 3) и вернуть полученное значение (использовать switch). </p>
+                <div class="lesson__solution">
+                    <code class="lesson__code">
+                        function mathOperation(operation, a, b) {<br>
+        
+                        switch(operation) {<br>
+        
+                        case 'sum': <br>
+                        return sumTwo(a,b);<br>
+        
+                        case 'substract': <br>
+                        return substractTwo(a,b);<br>
+        
+                        case 'multiply': <br>
+                        return multiplyTwo(a,b);<br>
+        
+                        case 'divise': <br>
+                        return diviseTwo(a,b);<br>
+                        }<br>
+                        }<br>
+                    </code>
+                    
+                        <ul class="lesson__btn-group">
+                            <li><button class="lesson__btn" type="button" onclick="callOperation('sum')">Sum</button></li>
+                            <li><button class="lesson__btn" type="button"
+                                    onclick="callOperation('substract')">Substract</button></li>
+                            <li><button class="lesson__btn" type="button" onclick="callOperation('multiply')">Multiply</button>
+                            </li>
+                            <li><button class="lesson__btn" type="button" onclick="callOperation('divise')">Divise</button></li>
+                        </ul>
+                        <p class="lesson__result-box" id="result_2-3">&nbsp;</p>
+                </div>
+            
+
+            <p class="lesson__text">*С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.</p>
+            <div class="lesson__solution">
+                <code class="lesson__code">
+                    function power(val, pow) {<br>
+                        <br>
+                        if(pow === 1) {<br>
+                            return val;<br>
+                        } else {<br>
+                            return val * power(val, pow -1 );<br>
+                        }<br>
+                    }
+                </code>
+                
+                        <li><button class="lesson__btn" type="button" onclick="callPower()">Power it up</button></li>
+                    <p class="lesson__result-box" id="result_2-4">&nbsp;</p>
+            </div>
+
+        </div>
+        <!-- </details> -->
+
+    </section>
+    <section class="lesson lesson_1">
+        <h2 class="lesson__title">Lesson 1</h2>
+
+        <details>
+            <summary>See solutions</summary>
+            <p class="lesson__text">
+                1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по
+                Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по
+                Фаренгейту,
+                Tc – температура по Цельсию</p>
+            <div class="lesson__solution">
+                <code class="lesson__code">
+                    function tempTranslate() { <br>
+
+                    let celcius = prompt('Enter temperature in Celcius');<br>
+
+                    alert(` ${celcius} deg Celcius equals ${(9 / 5) * celcius + 32} deg Farenheit`);<br>
+                    };
+                </code>
+
+                <button class="lesson__btn" type="button" onclick="tempTranslate()">Run me</button>
+            </div>
+            <div class="lesson__text">2. Работа с переменными. Объявить две переменные: admin и name. Записать в name
+                строку
+                "Василий";
+                Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).</div>
+            <div class="lesson__solution">
+                <code class="lesson__code">
+                    function variablePlay() {<br>
                     let p = document.getElementById('result');<br>
                     let admin = '';<br>
                     let name = 'Василий';<br>
                     admin = name;<br>
-                
-                    p.innerHTML = admin;<br>
-                };
-            </code>
 
-            <button class="lesson__btn" type="button" onclick="variablePlay()">Run me</button>
-            <p class="lesson__result-box" id="result_1">&nbsp;</p>
-        </div>
-        <p class="lesson__text">3. *Чему будет равно JS-выражение 1000 + "108"</p>
-        <div class="lesson__solution">
-            <p class="lesson__result-box">1000108: причина в преобразовании типов.</p>
-        </div>
-        <p class="lesson__text">4. *Работа с переменными. Обмен значений без третьей переменной.</p>
-        <div class="lesson__solution">
-            <code class="lesson__code">
-                function variableExchange() {<br>
+                    p.innerHTML = admin;<br>
+                    };
+                </code>
+
+                <button class="lesson__btn" type="button" onclick="variablePlay()">Run me</button>
+                <div class="lesson__result-box" id="result_1">&nbsp;</div>
+            </div>
+            <p class="lesson__text">3. *Чему будет равно JS-выражение 1000 + "108"</p>
+            <div class="lesson__solution">
+                <p class="lesson__result-box">1000108: причина в преобразовании типов.</p>
+            </div>
+            <div class="lesson__text">4. *Работа с переменными. Обмен значений без третьей переменной.</div>
+            <div class="lesson__solution">
+                <code class="lesson__code">
+                    function variableExchange() {<br>
                     let p = document.getElementById('result_2');<br>
                     let a = 10, b = 5;<br>
                     a += b;<br>
                     b = a - b;<br>
                     a = a - b;<br>
-                
-                    p.innerHTML = `a = ${a}, b = ${b}`;<br>
-                };
-            </code>
 
-            <button class="lesson__btn" type="button" onclick="variableExchange()">Run me</button>
-            <p class="lesson__result-box" id="result_2">a = 10, b = 5</p>
-        </div>
+                    p.innerHTML = `a = ${a}, b = ${b}`;<br>
+                    };
+                </code>
+
+                <button class="lesson__btn" type="button" onclick="variableExchange()">Run me</button>
+                <div class="lesson__result-box" id="result_2">a = 10, b = 5</div>
+            </div>
+        </details>
+
     </section>
-    <script src="./tempTranslate.js"></script>
-    <script src="./variablePlay.js"></script>
-    <script src="./variableExchange.js"></script>
+    <script src="./js/lesson-1.js"></script>
+    <script src="./js/lesson-2.js"></script>
 </body>
 
 </html>

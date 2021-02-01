@@ -30,13 +30,16 @@ body {
     align-items: center;
 }
 
+
 .lesson__code {
     background-color: #bdc3c7;
     border: 1px solid #34495e;
     margin: 0 20px;
     font-size: 16px;
     line-height: 24px;
-    width: 600px;
+    width: 650px;
+    max-height: 400px;
+    overflow: auto;
 }
 
 .lesson__btn {
@@ -70,4 +73,26 @@ body {
 
 .success {
     border: 3px solid #B85803;
+}
+
+.task__code {
+    display: block;
+    background-color: #bdc3c7;
+    border: 1px solid #34495e;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 24px;
+    width: 600px;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+.lesson__btn-group {
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 40px;
 }
