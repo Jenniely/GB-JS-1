@@ -34,10 +34,127 @@
         </details>
 
     </section> -->
+    <section class="lesson lesson_4">
+        <h2 class="lesson__title">Lesson 4</h2>
+
+       <!-- <details>
+            <summary>See solutions</summary> -->
+            <div class="task">
+                <p class="lesson__text">1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.</p>
+                <div class="lesson__solution">
+    
+                    <code class="lesson__code">
+                        function numToObj() {<br>
+                            let obj = {<br>
+                                'единицы': 0,<br>
+                                'десятки': 0,<br>
+                                'сотни': 0<br>
+                            };<br>
+                            let num = Math.floor(Math.random() * 999);<br>
+                            if (num > 999) {<br>
+                                console.log('Number is too big');<br>
+                                return {};<br>
+                            };
+                            let arr = num.toString().split('').map(Number).reverse();<br>
+                            obj['единицы'] = arr[0];<br>
+                            if (arr[1]) {<br>
+                                obj['десятки'] = arr[1];<br>
+                            };<br>
+                            if (arr[2]) {<br>
+                                obj['сотни'] = arr[2];<br>
+                            };<br>
+                            return obj;<br>
+                        }
+                    </code>
+                    <button class="lesson__btn" type="button" onclick="callNumToObj()">Run me</button>
+                    <div class="lesson__result-box" id="result-4-1">
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="task">
+                <p class="lesson__text">Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)</p>
+                <div class="lesson__solution">
+    
+                    <code class="lesson__code">
+                        //Инициализация. State хранит текущий путь игрока, чтобы правильно выдавать следующий инстанс. i - счетчик итераций. <br>
+                        let state = '0';<br>
+                        let i = 1;<br>
+                        let ok = false;<br>
+                        
+                        do {<br>
+                            //проверка на отказ от игры<br>
+                            if (state === '-1') {<br>
+                                alert('Вы вышли из игры');<br>
+                                break;<br>
+                            }<br>
+                            //вызов вопроса<br>
+                            state = askQuestion(state);<br>
+                            i++;<br>
+                        } while (state.length <= 4)<br>
+                        
+                        function askQuestion(state) {<br>
+                            ok = false;<br>
+                            //проверка на окончание пути<br>
+                            if (state.length === 4) {<br>
+                                console.log(`iteration ${i}, results`);<br>
+                                let obj = sources.find((item) => item.id === parseInt(state));<br>
+                                alert(`Игра окончена. ${obj.q}`);<br>
+                                return state += 5;<br>
+                            }<br>
+                            console.log(`iteration ${i}, state ${state}`);<br>
+                            let obj = sources.find((item) => item.id === parseInt(state));<br>
+                            //запрос ответа и проверка на соответствие параметрам<br>
+                            do {<br>
+                                let input = +prompt(`${obj.q}. Варианты: ${obj.a1} ${obj.a2}`);<br>
+                                if (input === -1) {<br>
+                                    return state = '-1';<br>
+                                }<br>
+                                ok = checkChoices(input, obj.opt);<br>
+                                //регистрация ответов для будущей проверки<br>
+                                if (ok) {<br>
+                                    obj.res = input;<br>
+                                    obj.used = i;<br>
+                                    return state += input;<br>
+                                }<br>
+                            } while (!ok);<br>
+                        }<br>
+                        <br>
+                        function checkChoices(input, opt) {<br>
+                            if (isNaN(input) || !isFinite(input)) {<br>
+                                alert('Принимаются только цифры');<br>
+                                return false;<br>
+                            } else if (input < 1 || input > opt) {<br>
+                                alert('Ваше число выходит из допустимого диапазона');<br>
+                                return false;<br>
+                            }<br>
+                            return true;<br>
+                        }<br>
+                        <br>
+                        function whatAnswer() {<br>
+                            <br>
+                            ok = false;<br>
+                            do {<br>
+                                let num = +prompt('Введите номер хода для проверки (от 1 до 3)');<br>
+                                ok = checkChoices(num, 3);<br>
+                                let obj = sources.find((item) => item.used === num);<br>
+                            alert(`На ходу ${num} на вопрос ${obj.q} вы ответили ${obj.res}`);<br>
+                            } while (!ok);<br>
+                        }<br>
+                        <br>
+                        whatAnswer();
+                    </code>
+                    <button class="lesson__btn" type="button" onclick="gameStart()">Run me</button>
+                </div>
+            </div>
+        
+        <!-- </details> -->
+
+    </section>
     <section class="lesson lesson_3">
         <h2 class="lesson__title">Lesson 3</h2>
 
-        <!--  <details>
+        <!-- <details> -->
             <summary>See solutions</summary> -->
         <div class="task">
             <p class="lesson__text">
@@ -147,7 +264,7 @@
                 </div>
             </div>
         </div>
-        <!-- </details> -->
+        </details>
 
     </section>
     <section class="lesson lesson_2">
@@ -437,6 +554,9 @@
     <script src="./js/lesson-1.js"></script>
     <script src="./js/lesson-2.js"></script>
     <script src="./js/lesson-3.js"></script>
+    <script src="./js/gameSource.js" defer></script>
+    <script src="./js/gameCode.js" defer></script>
+    <script src="./js/lesson-4.js" defer></script>
 </body>
 
 </html>
