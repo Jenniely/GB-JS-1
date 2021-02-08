@@ -11,3 +11,24 @@ function tempTranslate() {
     alert(` ${celcius} deg Celcius equals ${(9 / 5) * celcius + 32} deg Farenheit`);
 };
 
+
+function variableExchange() {
+    let p = document.getElementById('result_2');
+    let a = 10, b = 5;
+    a += b;
+    b = a - b;
+    a = a - b;
+
+    p.innerHTML = `a = ${a}, b = ${b}`;
+    p.classList.add('success');
+};
+
+function variablePlay() {
+    let p = document.getElementById('result_1');
+    let admin = '';
+    let name = 'Василий';
+    admin = name;
+
+    p.innerHTML = admin;
+    p.classList.add('success');
+};
