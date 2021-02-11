@@ -40,7 +40,7 @@ function createBoard() {
                 if (j > 0 && j < 9) {
                     j % 2 === 0 ? check.classList.add('check', ord1) : check.classList.add('check', ord2);
                 } else {
-                    check.innerHTML = i;
+                    check.innerHTML = 9-i;
                     j === 9 ? check.classList.add('flip', 'check', 'transparent') : check.classList.add('check', 'transparent');
                 }
 
