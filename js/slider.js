@@ -44,15 +44,25 @@ function createThumbs() {
 
 createThumbs();
 
+function replaceImgData(image, newImage) {
+    if (newImage.src) {
+        image.src = newImage.src;
+    image.id = newImage.id;
+    image.alt = newImage.alt;
+    } else {
+        console.log("there's no valid url here");
+    }
+}
+
 function scrollToRight() {
     let image = document.getElementsByClassName('slide-image')[0];
     let newId = 0;
 
     image.id == slideImages[slideImages.length - 1].id ?  newId = 0 : newId = parseInt(image.id) + 1;
     let newImage = slideImages.find(el => el.id === newId);
-    image.src = newImage.src;
-    image.id = newImage.id;
-    image.alt = newImage.alt;
+
+    replaceImgData(image, newImage);
+    
 }
 
 function scrollToLeft() {
@@ -62,9 +72,7 @@ function scrollToLeft() {
     image.id == 0 ?  newId = slideImages[slideImages.length - 1].id :  newId =  parseInt(image.id) - 1;
     let newImage = slideImages.find(el => el.id === newId);
 
-    image.src = newImage.src;
-    image.id = newImage.id;
-    image.alt = newImage.alt;
+    replaceImgData(image, newImage);
 }
 
 function showEnlarged() {
