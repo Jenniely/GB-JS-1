@@ -71,7 +71,7 @@ ul {
 }
 
 .lesson__result-box {
-    width: 600px;
+    width: 100%;
     margin: 0 auto;
     line-height: 2em;
     border: 1px solid #0E2398;
@@ -148,4 +148,127 @@ li {
 
 .transparent {
     background-color: transparent;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.slide-image {
+    margin: 40px;
+}
+
+.gallery-item {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 36px;
+    font-weight: 600;
+    border: none;
+    padding-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-thumb-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.slide-thumb {
+    width: 100px;
+    margin: 0 15px;
+}
+
+.catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog-item {
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0 10px;
+    border: 1px solid #34495e;
+    width: 300px;
+
+}
+
+.catalog-item-name {
+    font-size: 16px;
+    height: 75px;
+}
+
+.catalog-item-image {
+    width: 35%;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.catalog-item-description {
+    font-size: 12px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.catalog-item-add {
+    width: 120px;
+    height: 30px;
+    margin: 20px 0;
+    background: #0E2398;
+    background: -webkit-linear-gradient(top right, #0E2398, #8F65B4);
+    background: -moz-linear-gradient(top right, #0E2398, #8F65B4);
+    background: linear-gradient(to bottom left, #0E2398, #8F65B4);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    transition: background 0.5s, color 0.5s;
+}
+
+.cart {
+    padding: 15px;
+}
+
+.cart-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cart-items-item {
+    padding: 5px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #34495e;
+}
+
+.cart-items-item-name {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
 }

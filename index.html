@@ -10,6 +10,7 @@
 
 <body>
     <h2 class="page__title">JS-1 Homework</h2>
+
     <!--     <section class="lesson lesson_#">
         <h2 class="lesson__title">Lesson #</h2>
 
@@ -34,11 +35,61 @@
         </details>
 
     </section> -->
+    <section class="lesson lesson_#">
+        <h2 class="lesson__title">Lesson 6</h2>
+
+        <!-- <details>
+            <summary>See solutions</summary> -->
+            <p class="lesson__text">
+                1. Доработать функцию замены картинки в галерее таким образом, чтобы она проверяла наличие картинки по
+                указанному в src адресу.</p>
+            <p class="lesson__text"></p>2. Реализовать модуль корзины. Создать блок товаров и блок корзины. У каждого
+            товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок
+            корзины. Корзина должна уметь считать общую сумму заказа.</p>
+            <p class="lesson__text"></p>3) *Добавить в галерею функцию перехода к следующему изображению. По сторонам от
+            большой картинки должны быть стрелки «вперед» и «назад», по нажатию на которые происходит замена изображения
+            на следующее или предыдущее.
+            </p>
+            <div class="lesson__solution">
+                <div class="lesson__result-box w100" id="result-6-1">
+                    <div class="gallery">
+                        <div class="gallery-item arrow"><button id="scroll-left" class="arrow-btn">&#8249; </button></div>
+                        <div class="gallery-item slide">
+                            <p class="error hidden">No such picture, sorry!</p>
+                            <img src='./img/pink-sky-sm.jpg' alt="gallery image" class="slide-image" id='1'>
+                            <ul class="gallery-thumb-list" id="gallery-thumb-list">
+
+                            </ul>
+                        </div>
+                        <div class="gallery-item arrow"><button id="scroll-right" class="arrow-btn">&#8250; </button></div>
+                    </div>
+                </div>
+                <div class="lesson__result-box" id="result-6-2">
+                    <div class="cart">
+                        <div class="cart">
+                            <p class="cart-title">Корзина</p>
+                            <p class="empty hidden" id="empty">Корзина пуста</p>
+                            <ul class="cart-items-list" id="cart-items-list"></ul>
+                            <p class="cart-stats-text">Товаров в корзине: <span id="cart-count"> 0 </span></p>
+                            <p class="cart-stats-text">Итого: <span id="cart-total"> 0 </span> руб</p>
+                        </div>
+                        <div class="catalog">
+                            <ul class="catalog-list" id="catalog-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- </details> -->
+
+    </section>
     <section class="lesson lesson_5">
         <h2 class="lesson__title">Lesson 5</h2>
 
-        <!--  <details>
-            <summary>See solutions</summary> -->
+        <details>
+            <summary>See solutions</summary>
         <p class="lesson__text">
             1. Создать функцию, генерирующую шахматную доску. При этом можно использовать любые html-теги по своему
             желанию. Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки.
@@ -50,14 +101,15 @@
         <div class="lesson__solution">
             <div>
                 <button class="lesson__btn" type="button" onclick="createBoard()">Create board</button>
-            <button class="lesson__btn" type="button" onclick="fillBoard()">Fill board</button>
+                <button class="lesson__btn" type="button" onclick="fillBoard()">Fill board</button>
             </div>
             <div class="lesson__result-box" id="result-5-1">
                 <p>Вывод результата</p>
             </div>
+            
         </div>
 
-        <!-- </details> -->
+        </details>
 
     </section>
     <section class="lesson lesson_4">
@@ -594,6 +646,8 @@
     <script src="./js/gameCode.js" defer></script>
     <script src="./js/lesson-4.js" defer></script>
     <script src="./js/lesson-5.js" defer></script>
+    <script src="./js/slider.js" async></script>
+    <script src="./js/cart.js" async></script>
 </body>
 
 </html>
